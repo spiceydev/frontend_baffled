@@ -7,10 +7,13 @@ export default async (req, res) => {
   console.log(API_URL);
 
   try {
-    const postRes = await axios.post(`${API_URL}/auth/local`, {
-      identifier,
-      password,
-    });
+    const postRes = await axios.post(
+      `https://baffleddevelopers.herokuapp.com/auth/local`,
+      {
+        identifier,
+        password,
+      }
+    );
 
     setCookie({ res }, 'jwt', postRes.data.jwt, {
       httpOnly: true,
