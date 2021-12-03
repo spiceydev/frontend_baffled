@@ -4,6 +4,7 @@ import { API_URL } from '../../config';
 
 export default async (req, res) => {
   const { password, identifier } = req.body;
+  console.log(API_URL);
 
   try {
     const postRes = await axios.post(`${API_URL}/auth/local`, {
